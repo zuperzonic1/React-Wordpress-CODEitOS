@@ -10,7 +10,7 @@ interface IArticleRaw {
   author: number;
 }
 
-interface IArticle {
+interface ArticleInterface {
   id: number;
   link: string;
   title: string;
@@ -20,7 +20,7 @@ interface IArticle {
 }
 
 const Articles = () => {
-  const [articles, setArticles] = useState<IArticle[]>([]);
+  const [articles, setArticles] = useState<ArticleInterface[]>([]);
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
   useEffect(() => {
