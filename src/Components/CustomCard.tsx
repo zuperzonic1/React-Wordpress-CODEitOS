@@ -9,12 +9,12 @@ interface Article {
   excerpt: string;
 }
 
-interface ArticleCardsProps {
+interface CustomCardProps {
   articles: Article[];
   articleId: number;
 }
 
-const CustomCard: React.FC<ArticleCardsProps> = ({ articles, articleId }) => {
+const CustomCard: React.FC<CustomCardProps> = ({ articles, articleId }) => {
   const article = articles.find((article) => article.id === articleId);
 
   if (!article) {
@@ -28,7 +28,7 @@ const CustomCard: React.FC<ArticleCardsProps> = ({ articles, articleId }) => {
   }
 
   return (
-    <div className="bg-black text-white border border-gray-800 rounded-lg overflow-hidden shadow-lg max-w-lg mx-auto">
+    <div className="bg-black text-white border border-gray-800 rounded-lg overflow-hidden shadow-lg">
       {article.imageUrl && (
         <img
           src={article.imageUrl}
@@ -41,15 +41,12 @@ const CustomCard: React.FC<ArticleCardsProps> = ({ articles, articleId }) => {
         <p className="text-sm text-gray-400 mb-2">
           <strong>Published on:</strong> {article.publishedDate}
         </p>
-        <p className="text-sm text-gray-400 mb-4">
-          <strong>By:</strong> Micheal Felobes {/* Replace with actual author */}
-        </p>
         <div className="text-gray-300 mb-4">
           <Interweave content={article.excerpt} />
         </div>
         <Link
           to={`/articles/${article.id}`}
-          className="bg-orange-600 hover:bg-Orange text-white font-bold py-2 px-4 rounded"
+          className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
         >
           Read More
         </Link>

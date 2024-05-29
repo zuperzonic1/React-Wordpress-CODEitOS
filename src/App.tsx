@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import axios from "axios";
 import "./index.css";
 import Layout from "./Components/Layout";
+import NotFoundPage from "./Pages/NotFoundPage";
 
 
 const Homepage = React.lazy(() => import("./Pages/Homepage"));
@@ -141,6 +142,10 @@ const App: React.FC = () => {
             LoadingIndicator
           ),
         },
+        {
+          path: "*",
+          element: <NotFoundPage />,
+        }
       ],
     },
   ]);
