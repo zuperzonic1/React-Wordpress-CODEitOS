@@ -28,7 +28,7 @@ const CustomCard: React.FC<CustomCardProps> = ({ articles, articleId }) => {
   }
 
   return (
-    <div className="bg-black text-white border border-gray-800 rounded-lg overflow-hidden shadow-lg">
+    <div className="bg-black bg-opacity-40 text-white border border-Orange  rounded-lg overflow-hidden shadow-lg">
       {article.imageUrl && (
         <img
           src={article.imageUrl}
