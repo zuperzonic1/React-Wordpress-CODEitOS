@@ -9,6 +9,7 @@ const Homepage = React.lazy(() => import("./Pages/Homepage"));
 const ArticleCards = React.lazy(() => import("./Pages/ArticleCards"));
 const ArticleDetails = React.lazy(() => import("./Pages/ArticleDetails"));
 
+// parsing all the data that comes out of the API
 interface Article {
   id: number;
   imageUrl: string;
@@ -25,6 +26,7 @@ interface Article {
   content: string;
 }
 
+// cleaning API data before using it
 interface APIArticle {
   id: number;
   _embedded: {
@@ -94,7 +96,7 @@ const App: React.FC = () => {
 
   console.log(articles);
 
-  const loadingIndicator = (
+  const LoadingIndicator = (
     <div className="flex justify-center items-center h-screen">
       <div
         className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
@@ -113,29 +115,29 @@ const App: React.FC = () => {
         {
           path: "",
           element: (
-            <React.Suspense fallback={loadingIndicator}>
-              <Homepage />
+            <React.Suspense fallback={LoadingIndicator}>
+              <Homepage articles={articles}/>
             </React.Suspense>
           ),
         },
         {
           path: "articles",
           element: isDataLoaded ? (
-            <React.Suspense fallback={loadingIndicator}>
+            <React.Suspense fallback={LoadingIndicator}>
               <ArticleCards articles={articles} />
             </React.Suspense>
           ) : (
-            loadingIndicator
+            LoadingIndicator
           ),
         },
         {
           path: "articles/:articleId",
           element: isDataLoaded ? (
-            <React.Suspense fallback={loadingIndicator}>
+            <React.Suspense fallback={LoadingIndicator}>
               <ArticleDetails articles={articles} />
             </React.Suspense>
           ) : (
-            loadingIndicator
+            LoadingIndicator
           ),
         },
       ],

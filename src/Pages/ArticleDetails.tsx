@@ -28,52 +28,40 @@ const ArticleDetails: React.FC<ArticleDetailsProps> = ({ articles }) => {
   }
 
   return (
-    <main className="p-4 mx-auto max-w-7xl">
-      <div className="bg-white shadow mb-4 py-4 px-8 rounded-lg">
-        <h1 className="text-3xl font-bold">Article Details</h1>
-      </div>
-      <div className="mb-5 p-4 bg-white border border-gray-200 rounded-lg">
-        <h2 className="text-2xl font-bold mb-2">{article.title}</h2>
-        {article.imageUrl && (
+    <main className="p-4 mx-auto max-w-7xl  text-white">
+      <header className="py-4">
+        <h1 className="text-4xl font-bold">{article.title}</h1>
+      </header>
+      {article.imageUrl && (
+        <div className="my-4">
           <img
             src={article.imageUrl}
             alt={article.title}
-            className="w-full max-w-4xl h-auto mb-4 rounded"
+            className="w-full h-auto rounded"
           />
-        )}
-        <div className="text-sm text-gray-800 mb-2">
-          <strong>Wordpress Published on:</strong> {article.date}
         </div>
-        <div className="text-sm text-gray-800 mb-2">
-          <strong>Wordpress Last Modified:</strong> {article.modified}
-        </div>
-        <div className="text-sm text-gray-800 mb-2">
+      )}
+      <article className="prose prose-invert max-w-none">
+        <p className="text-lg mb-4">
+          <strong>Published on:</strong> {article.date}
+        </p>
+        <p className="text-lg mb-4">
+          <strong>Last Modified:</strong> {article.modified}
+        </p>
+        <p className="text-lg mb-4">
           <strong>Article Published Date:</strong> {article.publishedDate}
-        </div>
-        <div className="text-sm text-gray-800 mb-2">
+        </p>
+        <p className="text-lg mb-4">
           <strong>Publisher:</strong> {article.publisher}
-        </div>
-        <div className="text-sm text-gray-800 mb-2">
+        </p>
+        <p className="text-lg mb-4">
           <strong>Categories:</strong> {article.categories}
-        </div>
-        <div className="text-sm text-gray-800 mb-4">
+        </p>
+        <p className="text-lg mb-4">
           <strong>Tags:</strong> {article.tags}
-        </div>
-        <Interweave
-          content={article.content}
-          className="prose max-w-none mb-4"
-        />
-
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">
-          <a
-            href={article.articleUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read Full Article
-          </a>
-        </button>
-      </div>
+        </p>
+        <Interweave content={article.content} />
+      </article>
     </main>
   );
 };
