@@ -71,22 +71,22 @@ const Navbar: React.FC = () => {
               </svg>
             </button>
             {isDropdownOpen && (
-              <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2">
+              <div className="absolute right-0 mt-2 w-48 bg-black text-white rounded-md shadow-lg py-2">
                 <Link
                   to="/category1"
-                  className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  className="block px-4 py-2 text-gray-300 hover:bg-gray-700"
                 >
                   Category 1
                 </Link>
                 <Link
                   to="/category2"
-                  className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  className="block px-4 py-2 text-gray-300 hover:bg-gray-700"
                 >
                   Category 2
                 </Link>
                 <Link
                   to="/category3"
-                  className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  className="block px-4 py-2 text-gray-300 hover:bg-gray-700"
                 >
                   Category 3
                 </Link>
@@ -184,22 +184,22 @@ const Navbar: React.FC = () => {
                 </svg>
               </button>
               {isDropdownOpen && (
-                <div className="mt-2 bg-white rounded-md shadow-lg py-2">
+                <div className="mt-2 bg-black text-white rounded-md shadow-lg py-2">
                   <Link
                     to="/category1"
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    className="block px-4 py-2 text-gray-300 hover:bg-gray-700"
                   >
                     Category 1
                   </Link>
                   <Link
                     to="/category2"
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    className="block px-4 py-2 text-gray-300 hover:bg-gray-700"
                   >
                     Category 2
                   </Link>
                   <Link
                     to="/category3"
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    className="block px-4 py-2 text-gray-300 hover:bg-gray-700"
                   >
                     Category 3
                   </Link>
