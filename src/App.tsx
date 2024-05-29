@@ -5,6 +5,7 @@ import axios from "axios";
 import "./index.css";
 import Layout from "./Components/Layout";
 
+
 const Homepage = React.lazy(() => import("./Pages/Homepage"));
 const ArticleCards = React.lazy(() => import("./Pages/ArticleCards"));
 const ArticleDetails = React.lazy(() => import("./Pages/ArticleDetails"));
