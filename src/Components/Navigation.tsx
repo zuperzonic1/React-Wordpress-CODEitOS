@@ -15,14 +15,14 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="relative w-full h-[30vh] bg-cover bg-center featured-bg-image z-20">
-      <div className="container pt-4 mx-auto flex justify-between items-start h-full px-4">
-        <div className="flex items-start">
+      <div className="container mx-auto flex justify-between items-start h-full px-4">
+        <div className="flex items-start sticky top-0 mt-3 bg-black bg-opacity-40 p-5">
           <Link to="/">
             <img src="/logo.svg" alt="Logo" className="h-12" />
           </Link>
         </div>
 
-        <div className="hidden md:flex items-start space-x-4 mt-3">
+        <div className="hidden md:flex items-start space-x-4 mt-3 sticky top-0 bg-black bg-opacity-40 p-5">
           <form action="" className="relative flex">
             <input
               type="search"
@@ -96,7 +96,7 @@ const Navbar: React.FC = () => {
         </div>
 
         <button
-          className="md:hidden text-white mt-1"
+          className="md:hidden text-white  sticky top-0 mt-3 bg-black bg-opacity-40 p-5"
           onClick={toggleMobileMenu}
         >
           <svg
