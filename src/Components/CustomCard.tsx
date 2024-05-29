@@ -49,7 +49,7 @@ const CustomCard: React.FC<ArticleCardsProps> = ({ articles, articleId }) => {
         </div>
         <Link
           to={`/articles/${article.id}`}
-          className="bg-Orange hover:bg-Orange text-white font-bold py-2 px-4 rounded"
+          className="bg-orange-600 hover:bg-Orange text-white font-bold py-2 px-4 rounded"
         >
           Read More
         </Link>

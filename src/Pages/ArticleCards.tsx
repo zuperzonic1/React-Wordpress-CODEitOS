@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { Interweave } from "interweave";
+import RecentlyAdded from '../Components/RecientlyAdded'; // Adjust the path as needed
 
 interface Article {
   id: number;
@@ -16,43 +15,10 @@ interface ArticleCardsProps {
 const ArticleCards: React.FC<ArticleCardsProps> = ({ articles }) => {
   return (
     <main className="p-4 mx-auto max-w-7xl">
-      <div className="shadow mb-4 py-4  rounded-lg">
-        <h1 className="text-3xl text-white font-bold">RECIENTLY ADDED</h1>
+      <div className="shadow mb-4 py-4 px-8 rounded-lg">
+        <h1 className="text-3xl text-white font-bold">Article Card</h1>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {articles.map((article) => (
-          <div
-            key={article.id}
-            className="bg-black text-white border border-gray-800 rounded-lg overflow-hidden shadow-lg"
-          >
-            {article.imageUrl && (
-              <img
-                src={article.imageUrl}
-                alt={article.title}
-                className="h-48 w-full object-cover"
-              />
-            )}
-            <div className="p-6">
-              <h2 className="text-xl font-bold mb-2">{article.title}</h2>
-              <p className="text-sm text-gray-400 mb-2">
-                <strong>Published on:</strong> {article.publishedDate}
-              </p>
-              <p className="text-sm text-gray-400 mb-4">
-                <strong>By:</strong> Micheal Felobes {/* Replace with actual author */}
-              </p>
-              <div className="text-gray-300 mb-4">
-                <Interweave content={article.excerpt} />
-              </div>
-              <Link
-                to={`/articles/${article.id}`}
-                className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded"
-              >
-                Read More
-              </Link>
-            </div>
-          </div>
-        ))}
-      </div>
+      <RecentlyAdded articles={articles} />
     </main>
   );
 };
