@@ -13,3 +13,37 @@
   background-size: cover;
   background-position: center;
 }
+
+body {
+  background-image: url("/background.png");
+  background-repeat: repeat; /* Ensures the background image repeats */
+  background-size: 700px 700px; /* Makes the background image smaller, adjust these values as needed */
+  animation: moveBackground 80s linear infinite;
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 500px 500px; /* Adjust these values to control the speed and direction of the movement */
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #FF3D00; /* Bright orange */
+  border-radius: 10px;
+  border: 2px solid #2D2D2D; /* Dark background color to give a small padding */
+}
+
+::-webkit-scrollbar-track {
+  background: #2D2D2D; /* Dark background color */
+}
