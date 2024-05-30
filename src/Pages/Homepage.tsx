@@ -32,7 +32,7 @@ const Homepage: React.FC<HomepageProps> = ({ articles }) => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <CustomCard articleId={22} articles={articles} /> {/* Pass the correct types */}
         <CustomCard articleId={24} articles={articles} /> {/* Pass the correct types */}
-        <CustomCard articleId={22} articles={articles} /> {/* Pass the correct types */}
+        <CustomCard articleId={41} articles={articles} /> {/* Pass the correct types */}
         <CustomCard articleId={27} articles={articles} /> {/* Pass the correct types */}
       </div>
       <div className="shadow mb-7 mt-10 rounded-lg">

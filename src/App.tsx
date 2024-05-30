@@ -112,7 +112,7 @@ const App: React.FC = () => {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Layout />,
+      element: <Layout articles={articles} />,
       children: [
         {
           path: "",
