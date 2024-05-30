@@ -1,5 +1,6 @@
-import { useParams } from "react-router-dom";
-import { Interweave } from "interweave";
+import { useParams } from 'react-router-dom';
+import { Interweave } from 'interweave';
+import HighlightCode from '../Components/HighlightCode';
 
 interface Article {
   id: number;
@@ -28,7 +29,7 @@ const ArticleDetails: React.FC<ArticleDetailsProps> = ({ articles }) => {
   }
 
   return (
-    <main className="p-4 mx-auto max-w-7xl  text-white">
+    <main className="p-4 mx-auto max-w-7xl text-white">
       <header className="py-4">
         <h1 className="text-4xl font-bold">{article.title}</h1>
       </header>
@@ -61,6 +62,7 @@ const ArticleDetails: React.FC<ArticleDetailsProps> = ({ articles }) => {
           <strong>Tags:</strong> {article.tags}
         </p>
         <Interweave content={article.content} />
+        <HighlightCode />
       </article>
     </main>
   );
