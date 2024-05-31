@@ -41,26 +41,26 @@ const Homepage: React.FC<HomepageProps> = ({ articles }) => {
       <RecentlyAdded articles={articles} />
 
       <section className="mt-14 py-5">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-28">
           <div className=" p-8 rounded-lg text-white mt-4">
             <h2 className="text-2xl font-bold mb-4">ABOUT US</h2>
             <p>The Workplace Educational Placement Agreement (WEPA) Form has been replaced by the Post-secondary Student Unpaid Work Placement Workplace Insurance Claim Form. Placement Employers and Training Agencies facilitating programs are required to complete and sign this form in order to be eligible for WSIB coverage.</p>
           </div>
           <img src="/mock.png" alt="About Us" className="rounded-lg mb-5" />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-28">
           <div className=" p-8 rounded-lg text-white  mt-4">
             <h2 className="text-2xl font-bold mb-4">WRITE A BLOG ?</h2>
             <p>The Workplace Educational Placement Agreement (WEPA) Form has been replaced by the Post-secondary Student Unpaid Work Placement Workplace Insurance Claim Form. Placement Employers and Training Agencies facilitating programs are required to complete and sign this form in order to be eligible for WSIB coverage.</p>
           </div>
-          <img src="/mock.png" alt="About Us" className="rounded-lg mb-5" />
+          <img src="/mock4.png" alt="About Us" className="rounded-lg mb-5" />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-28">
           <div className=" p-8 rounded-lg text-white  mt-4">
             <h2 className="text-2xl font-bold mb-4">WHAT TO GAIN !</h2>
             <p>The Workplace Educational Placement Agreement (WEPA) Form has been replaced by the Post-secondary Student Unpaid Work Placement Workplace Insurance Claim Form. Placement Employers and Training Agencies facilitating programs are required to complete and sign this form in order to be eligible for WSIB coverage.</p>
           </div>
-          <img src="/mock.png" alt="About Us" className="rounded-lg mb-5" />
+          <img src="/mock3.png" alt="About Us" className="rounded-lg mb-5" />
         </div>
         
       </section>

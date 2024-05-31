@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import SearchResults from "./SearchResults"; // Ensure this is the correct path to your SearchResults component
 
 interface Article {
@@ -43,18 +43,18 @@ const SearchForm = ({ articles }: { articles: Article[] }) => {
     setSearchResults([]);
   };
 
-  const handleClickOutside = (event: MouseEvent) => {
+  const handleClickOutside = useCallback((event: MouseEvent) => {
     if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
       handleCloseSearch();
     }
-  };
+  }, []);
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [handleClickOutside]);
 
   return (
     <div ref={searchRef} className="relative flex w-full md:w-auto">
@@ -107,3 +107,4 @@ const SearchForm = ({ articles }: { articles: Article[] }) => {
 };
 
 export default SearchForm;
+  

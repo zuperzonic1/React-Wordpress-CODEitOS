@@ -19,9 +19,16 @@ const CustomCard: React.FC<CustomCardProps> = ({ articles, articleId }) => {
 
   if (!article) {
     return (
-      <div className="p-4 mx-auto max-w-7xl">
-        <div className="bg-white shadow mb-4 py-4 px-8 rounded-lg">
-          <h1 className="text-3xl font-bold">Article Not Found</h1>
+      <div className="flex justify-center items-center p-4 mx-auto max-w-7xl h-full">
+        <div
+          className="inline-block h-16 w-16 animate-spin rounded-full border-4 border-solid border-Orange border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+          role="status"
+        >
+          <span
+            className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+          >
+            Loading...
+          </span>
         </div>
       </div>
     );
