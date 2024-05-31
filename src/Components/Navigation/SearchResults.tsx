@@ -1,12 +1,6 @@
 import SearchCard from "./SearchCard"; // Ensure this is the correct path to your SearchCard component
+import { Article } from "../types";
 
-interface Article {
-  id: number;
-  title: string;
-  publishedDate: string;
-  excerpt: string;
-  imageUrl: string;
-}
 
 const SearchResults = ({ articles }: { articles: Article[] }) => {
   return (

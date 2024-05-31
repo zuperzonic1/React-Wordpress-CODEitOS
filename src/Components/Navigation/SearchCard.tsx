@@ -1,11 +1,5 @@
 import { Link } from "react-router-dom";
-
-interface Article {
-  id: number;
-  title: string;
-  publishedDate: string;
-  imageUrl: string;
-}
+import { Article } from "../types";
 
 const SearchCard: React.FC<{ article: Article }> = ({ article }) => {
   return (

@@ -1,26 +1,9 @@
 import { useParams } from 'react-router-dom';
 import { Interweave } from 'interweave';
 import HighlightCode from '../Components/HighlightCode';
+import { Article } from '../Components/types';
 
-interface Article {
-  id: number;
-  imageUrl: string;
-  title: string;
-  date: string;
-  modified: string;
-  publishedDate: string;
-  publisher: string;
-  categories: string;
-  tags: string;
-  content: string;
-  articleUrl: string;
-}
-
-interface ArticleDetailsProps {
-  articles: Article[];
-}
-
-const ArticleDetails: React.FC<ArticleDetailsProps> = ({ articles }) => {
+const ArticleDetails = ({ articles }: { articles: Article[] }) => {
   const { articleId } = useParams<{ articleId: string }>();
   const article = articles.find((a) => `${a.id}` === articleId);
 

@@ -1,12 +1,19 @@
 import { Link } from "react-router-dom";
 import SearchForm from "./SearchForm";
 import Dropdown from "./Dropdown";
+import { Article } from "../types";
+
+interface MobileMenuProps {
+  isMobileMenuOpen: boolean;
+  toggleMobileMenu: () => void;
+  articles: Article[];
+}
 
 const MobileMenu = ({
   isMobileMenuOpen,
   toggleMobileMenu,
   articles,
-}: any) => {
+}: MobileMenuProps) => {
   return (
     <div
       className={`fixed top-0 left-0 w-64 h-full bg-black text-white z-30 transition-transform transform ${
@@ -35,7 +42,7 @@ const MobileMenu = ({
           <button className="text-white font-bold mt-4">CONTENT</button>
         </Link>
         <div className="relative">
-          <Dropdown />
+          <Dropdown articles={articles} />
         </div>
       </div>
     </div>

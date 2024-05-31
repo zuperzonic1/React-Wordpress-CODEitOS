@@ -1,21 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import SearchResults from "./SearchResults"; // Ensure this is the correct path to your SearchResults component
-
-interface Article {
-  id: number;
-  imageUrl: string;
-  title: string;
-  date: string;
-  modified: string;
-  excerpt: string;
-  author: string;
-  articleUrl: string;
-  publishedDate: string;
-  publisher: string;
-  categories: string;
-  tags: string;
-  content: string;
-}
+import { Article } from "../types";
 
 const SearchForm = ({ articles }: { articles: Article[] }) => {
   const [searchQuery, setSearchQuery] = useState("");

@@ -1,13 +1,6 @@
 import { Link } from "react-router-dom";
 import { Interweave } from "interweave";
-
-interface Article {
-  id: number;
-  imageUrl: string;
-  title: string;
-  publishedDate: string;
-  excerpt: string;
-}
+import { Article } from "./types";
 
 interface CustomCardProps {
   articles: Article[];

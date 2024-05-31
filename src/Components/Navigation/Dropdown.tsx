@@ -1,21 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
-interface Article {
-  id: number;
-  imageUrl: string;
-  title: string;
-  date: string;
-  modified: string;
-  excerpt: string;
-  author: string;
-  articleUrl: string;
-  publishedDate: string;
-  publisher: string;
-  categories: string;
-  tags: string;
-  content: string;
-}
+import { Article } from "../types";
 
 const Dropdown = ({ articles }: { articles: Article[] }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);

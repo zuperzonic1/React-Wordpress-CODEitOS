@@ -1,18 +1,7 @@
 import RecentlyAdded from '../Components/RecientlyAdded'; // Adjust the path as needed
+import { Article } from '../Components/types';
 
-interface Article {
-  id: number;
-  imageUrl: string;
-  title: string;
-  publishedDate: string;
-  excerpt: string;
-}
-
-interface ArticleCardsProps {
-  articles: Article[];
-}
-
-const ArticleCards: React.FC<ArticleCardsProps> = ({ articles }) => {
+const ArticleCards = ({ articles }: { articles: Article[] }) => {
   return (
     <main className="p-4 mx-auto max-w-7xl">
       <div className="shadow mb-4 py-4 rounded-lg">

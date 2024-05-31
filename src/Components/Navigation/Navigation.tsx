@@ -4,22 +4,8 @@ import SearchForm from "./SearchForm";
 import Dropdown from "./Dropdown";
 import MobileMenu from "./MobileMenu";
 import { Link } from "react-router-dom";
+import { Article } from "../types";
 
-interface Article {
-  id: number;
-  imageUrl: string;
-  title: string;
-  date: string;
-  modified: string;
-  excerpt: string;
-  author: string;
-  articleUrl: string;
-  publishedDate: string;
-  publisher: string;
-  categories: string;
-  tags: string;
-  content: string;
-}
 
 const Navbar = ({ articles }: { articles: Article[] }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

@@ -1,29 +1,8 @@
-import React from "react";
 import CustomCard from "../Components/CustomCard";
-// import { Article } from "../types"; // Import the Article type
-// import ArticleCards from "./ArticleCards";
 import RecentlyAdded from "../Components/RecientlyAdded";
+import { Article } from '../Components/types';
 
-interface Article {
-  id: number;
-  imageUrl: string;
-  title: string;
-  date: string;
-  modified: string;
-  excerpt: string;
-  author: string;
-  articleUrl: string;
-  publishedDate: string;
-  publisher: string;
-  categories: string;
-  tags: string;
-  content: string;
-}
-interface HomepageProps {
-  articles: Article[]; 
-}
-
-const Homepage: React.FC<HomepageProps> = ({ articles }) => {
+const Homepage = ({ articles }: { articles: Article[] }) => {
   return (
     <main className="mx-auto max-w-7xl">
       <div className="shadow mb-7 mt-10  rounded-lg">
@@ -41,29 +20,28 @@ const Homepage: React.FC<HomepageProps> = ({ articles }) => {
       <RecentlyAdded articles={articles} />
 
       <section className="mt-14 py-5">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-28">
-          <div className=" p-8 rounded-lg text-white mt-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-28">
+        <div className="p-8 rounded-lg text-white mt-4">
             <h2 className="text-2xl font-bold mb-4">ABOUT US</h2>
-            <p>The Workplace Educational Placement Agreement (WEPA) Form has been replaced by the Post-secondary Student Unpaid Work Placement Workplace Insurance Claim Form. Placement Employers and Training Agencies facilitating programs are required to complete and sign this form in order to be eligible for WSIB coverage.</p>
-          </div>
-          <img src="/mock.png" alt="About Us" className="rounded-lg mb-5" />
+            <p>Welcome to Codeitos! We're a passionate group of friends united by our love for technology and programming. At Codeitos, we dive into coding tutorials, tech tips, and the latest in the tech world. Our mission is to create a community where tech enthusiasts can learn, share, and grow together. Whether you're a seasoned developer or just starting out, you'll find valuable resources and friendly faces here. Join us on this exciting journey of discovery and innovation.</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-28">
-          <div className=" p-8 rounded-lg text-white  mt-4">
-            <h2 className="text-2xl font-bold mb-4">WRITE A BLOG ?</h2>
-            <p>The Workplace Educational Placement Agreement (WEPA) Form has been replaced by the Post-secondary Student Unpaid Work Placement Workplace Insurance Claim Form. Placement Employers and Training Agencies facilitating programs are required to complete and sign this form in order to be eligible for WSIB coverage.</p>
-          </div>
-          <img src="/mock4.png" alt="About Us" className="rounded-lg mb-5" />
+        <img src="/mock.png" alt="About Us" className="rounded-lg mb-5" />
+    </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-28">
+        <div className="p-8 rounded-lg text-white mt-4">
+            <h2 className="text-2xl font-bold mb-4">WRITE A BLOG?</h2>
+            <p>Do you love sharing your knowledge and insights about programming and technology? At Codeitos, we welcome contributions from tech enthusiasts like you! We're looking for bloggers to join our community and share tutorials, tips, and experiences. While we don't offer monetary compensation, writing for us is a fantastic way to help others, enhance your writing skills, and be part of a vibrant tech community. Interested? Reach out to us and start contributing today!</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-28">
-          <div className=" p-8 rounded-lg text-white  mt-4">
-            <h2 className="text-2xl font-bold mb-4">WHAT TO GAIN !</h2>
-            <p>The Workplace Educational Placement Agreement (WEPA) Form has been replaced by the Post-secondary Student Unpaid Work Placement Workplace Insurance Claim Form. Placement Employers and Training Agencies facilitating programs are required to complete and sign this form in order to be eligible for WSIB coverage.</p>
-          </div>
-          <img src="/mock3.png" alt="About Us" className="rounded-lg mb-5" />
+        <img src="/mock4.png" alt="Write a Blog" className="rounded-lg mb-5" />
+    </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-28">
+        <div className="p-8 rounded-lg text-white mt-4">
+            <h2 className="text-2xl font-bold mb-4">WHAT TO GAIN!</h2>
+            <p>Joining Codeitos offers you the chance to connect with fellow tech enthusiasts, stay updated on the latest trends, and hone your programming skills. By contributing blogs, you'll gain visibility in the tech community, improve your writing, and build a portfolio that showcases your expertise. Plus, you'll be helping others on their tech journey. It's a win-win for everyone involved. Join us today and start making a difference!</p>
         </div>
-        
-      </section>
+        <img src="/mock3.png" alt="What to Gain" className="rounded-lg mb-5" />
+    </div>
+</section>
     </main>
   );
 };
