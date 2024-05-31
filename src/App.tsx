@@ -6,12 +6,11 @@ import "./index.css";
 import Layout from "./Components/Layout";
 import NotFoundPage from "./Pages/NotFoundPage";
 
-
 const Homepage = React.lazy(() => import("./Pages/Homepage"));
 const ArticleCards = React.lazy(() => import("./Pages/ArticleCards"));
 const ArticleDetails = React.lazy(() => import("./Pages/ArticleDetails"));
+const CategoryPage = React.lazy(() => import("./Pages/CategoryPage"));
 
-// parsing all the data that comes out of the API
 interface Article {
   id: number;
   imageUrl: string;
@@ -28,34 +27,19 @@ interface Article {
   content: string;
 }
 
-// cleaning API data before using it
 interface APIArticle {
   id: number;
   _embedded: {
-    "wp:featuredmedia"?: Array<{
-      source_url: string;
-    }>;
-    author?: Array<{
-      name: string;
-    }>;
+    "wp:featuredmedia"?: Array<{ source_url: string }>;
+    author?: Array<{ name: string }>;
     "wp:term": Array<Array<{ name: string }>>;
   };
-  title: {
-    rendered: string;
-  };
+  title: { rendered: string };
   date: string;
   modified: string;
-  excerpt: {
-    rendered: string;
-  };
-  acf: {
-    article_url: string;
-    published_date: string;
-    publisher: string;
-  };
-  content: {
-    rendered: string;
-  };
+  excerpt: { rendered: string };
+  acf: { article_url: string; published_date: string; publisher: string };
+  content: { rendered: string };
 }
 
 const App: React.FC = () => {
@@ -66,37 +50,26 @@ const App: React.FC = () => {
     axios
       .get("https://blogbackend.mfelobes.ca/wp-json/wp/v2/articles?_embed")
       .then((res) => {
-        const simplifiedArticles: Article[] = res.data.map(
-          (article: APIArticle) => ({
-            id: article.id,
-            imageUrl:
-              article._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "",
-            title: article.title.rendered,
-            date: new Date(article.date).toLocaleDateString(),
-            modified: new Date(article.modified).toLocaleDateString(),
-            excerpt: article.excerpt.rendered,
-            author: article._embedded?.author?.[0]?.name || "Unknown",
-            articleUrl: article.acf.article_url,
-            publishedDate: article.acf.published_date,
-            publisher: article.acf.publisher,
-            categories:
-              article._embedded["wp:term"]?.[0]
-                ?.map((cat) => cat.name)
-                .join(", ") || "",
-            tags:
-              article._embedded["wp:term"]?.[1]
-                ?.map((tag) => tag.name)
-                .join(", ") || "",
-            content: article.content.rendered,
-          })
-        );
+        const simplifiedArticles: Article[] = res.data.map((article: APIArticle) => ({
+          id: article.id,
+          imageUrl: article._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "",
+          title: article.title.rendered,
+          date: new Date(article.date).toLocaleDateString(),
+          modified: new Date(article.modified).toLocaleDateString(),
+          excerpt: article.excerpt.rendered,
+          author: article._embedded?.author?.[0]?.name || "Unknown",
+          articleUrl: article.acf.article_url,
+          publishedDate: article.acf.published_date,
+          publisher: article.acf.publisher,
+          categories: article._embedded["wp:term"]?.[0]?.map((cat) => cat.name).join(", ") || "",
+          tags: article._embedded["wp:term"]?.[1]?.map((tag) => tag.name).join(", ") || "",
+          content: article.content.rendered,
+        }));
         setArticles(simplifiedArticles);
         setIsDataLoaded(true);
       })
       .catch((err) => console.log(err));
   }, []);
-
-  console.log(articles);
 
   const LoadingIndicator = (
     <div className="flex justify-center items-center h-screen">
@@ -118,7 +91,7 @@ const App: React.FC = () => {
           path: "",
           element: (
             <React.Suspense fallback={LoadingIndicator}>
-              <Homepage articles={articles}/>
+              <Homepage articles={articles} />
             </React.Suspense>
           ),
         },
@@ -143,9 +116,19 @@ const App: React.FC = () => {
           ),
         },
         {
+          path: "category/:category",
+          element: isDataLoaded ? (
+            <React.Suspense fallback={LoadingIndicator}>
+              <CategoryPage articles={articles} />
+            </React.Suspense>
+          ) : (
+            LoadingIndicator
+          ),
+        },
+        {
           path: "*",
           element: <NotFoundPage />,
-        }
+        },
       ],
     },
   ]);

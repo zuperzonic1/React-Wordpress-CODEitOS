@@ -27,8 +27,9 @@ const CustomCard: React.FC<CustomCardProps> = ({ articles, articleId }) => {
     );
   }
 
+
   return (
-    <div className="bg-black bg-opacity-40 text-white border border-Orange  rounded-lg overflow-hidden shadow-lg">
+    <div className="bg-black bg-opacity-40 text-white border border-orange-600 rounded-lg overflow-hidden shadow-lg flex flex-col h-full">
       {article.imageUrl && (
         <img
           src={article.imageUrl}
@@ -36,20 +37,22 @@ const CustomCard: React.FC<CustomCardProps> = ({ articles, articleId }) => {
           className="h-48 w-full object-cover"
         />
       )}
-      <div className="p-6">
+      <div className="p-6 flex flex-col flex-grow">
         <h2 className="text-xl font-bold mb-2">{article.title}</h2>
         <p className="text-sm text-gray-400 mb-2">
           <strong>Published on:</strong> {article.publishedDate}
         </p>
-        <div className="text-gray-300 mb-4">
+        <div className="text-gray-300 mb-4 flex-grow">
           <Interweave content={article.excerpt} />
         </div>
-        <Link
-          to={`/articles/${article.id}`}
-          className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
-        >
-          Read More
-        </Link>
+        <div className="mt-auto">
+          <Link
+            to={`/articles/${article.id}`}
+            className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Read More
+          </Link>
+        </div>
       </div>
     </div>
   );

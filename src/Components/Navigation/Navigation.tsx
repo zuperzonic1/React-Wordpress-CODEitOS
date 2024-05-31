@@ -35,9 +35,9 @@ const Navbar = ({ articles }: { articles: Article[] }) => {
         <div className="hidden md:flex items-start space-x-4 mt-3 sticky top-0 bg-black bg-opacity-40 p-5">
           <SearchForm articles={articles} />
           <Link to="/articles">
-            <button className="text-white mt-1 font-bold">CONTENT</button>
+            <button className="text-white mt-1 font-bold">ALL CONTENT</button>
           </Link>
-          <Dropdown />
+          <Dropdown articles={articles} />
         </div>
         <button
           className="md:hidden text-white sticky top-0 mt-3 bg-black bg-opacity-40 p-5"
