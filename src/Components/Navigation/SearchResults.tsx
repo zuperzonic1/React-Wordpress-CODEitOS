@@ -4,7 +4,7 @@ import { Article } from "../types";
 
 const SearchResults = ({ articles }: { articles: Article[] }) => {
   return (
-    <div className="absolute top-full mt-2 w-full md:w-auto max-h-64 overflow-y-scroll bg-black text-white rounded-md shadow-lg z-50">
+    <div className="absolute top-full mt-2 w-full md:w-auto max-h-100 overflow-y-scroll bg-black text-white rounded-md shadow-lg z-50">
       {articles.length > 0 ? (
         articles.map((article) => (
           <SearchCard key={article.id} article={article} />

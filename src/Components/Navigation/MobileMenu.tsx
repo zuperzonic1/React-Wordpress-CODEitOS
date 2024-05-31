@@ -16,7 +16,7 @@ const MobileMenu = ({
 }: MobileMenuProps) => {
   return (
     <div
-      className={`fixed top-0 left-0 w-64 h-full bg-black text-white z-30 transition-transform transform ${
+      className={`fixed top-0 left-0 w-65 h-full bg-black text-white z-30 transition-transform transform ${
         isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
       } md:hidden`}
     >

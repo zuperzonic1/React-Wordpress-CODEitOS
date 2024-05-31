@@ -41,13 +41,15 @@ const SearchForm = ({ articles }: { articles: Article[] }) => {
     };
   }, [handleClickOutside]);
 
+
+
   return (
     <div ref={searchRef} className="relative flex w-full md:w-auto">
       <input
         type="search"
         value={searchQuery}
         onChange={handleSearch}
-        className="text-xs text-white relative z-10 h-8 w-full md:w-80 rounded-lg border bg-transparent pr-6 outline-none focus:rounded-lg focus:cursor-text focus:border-Orange px-3"
+        className="text-md md:text-sm text-white relative z-10 h-8 w-full md:w-80 rounded-lg border bg-transparent pr-6 outline-none focus:rounded-lg focus:cursor-text focus:border-Orange px-3"
         placeholder="Typing..."
       />
       <button className="absolute top-0 right-0 bottom-0 my-auto h-8 w-10 flex items-center justify-center bg-transparent border border-Orange rounded-lg peer-focus:relative peer-focus:rounded-l-none peer-focus:border-orange-500">
@@ -92,4 +94,3 @@ const SearchForm = ({ articles }: { articles: Article[] }) => {
 };
 
 export default SearchForm;
-  
