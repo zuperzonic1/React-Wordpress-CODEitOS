@@ -10,7 +10,7 @@ const SearchResults = ({ articles }: { articles: Article[] }) => {
           <SearchCard key={article.id} article={article} />
         ))
       ) : (
-        <div className="text-center text-white p-4">No results found</div>
+        <div className="text-center w-full text-white p-4">No results found</div>
       )}
     </div>
   );

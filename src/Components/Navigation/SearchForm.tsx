@@ -41,8 +41,6 @@ const SearchForm = ({ articles }: { articles: Article[] }) => {
     };
   }, [handleClickOutside]);
 
-
-
   return (
     <div ref={searchRef} className="relative flex w-full md:w-auto">
       <input
@@ -68,7 +66,7 @@ const SearchForm = ({ articles }: { articles: Article[] }) => {
       {searchQuery && (
         <div className="absolute top-full mt-2 w-full bg-black text-white rounded-md shadow-lg z-50">
           <div className="flex justify-between items-center p-2 border-b border-gray-700">
-            <span>Search Results</span>
+            <span>Search Results ({searchResults.length})</span>
             <button onClick={handleCloseSearch}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

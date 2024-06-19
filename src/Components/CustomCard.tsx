@@ -27,6 +27,13 @@ const CustomCard: React.FC<CustomCardProps> = ({ articles, articleId }) => {
     );
   }
 
+  const shorterExcerpt = (text: string, wordLimit: number) => {
+    const words = text.split(" ");
+    return words.length > wordLimit
+      ? words.slice(0, wordLimit).join(" ") + "..."
+      : text;
+  };
+
 
   return (
     <div className="bg-black bg-opacity-40 text-white border border-orange-600 rounded-lg overflow-hidden shadow-lg flex flex-col h-full">
@@ -40,10 +47,10 @@ const CustomCard: React.FC<CustomCardProps> = ({ articles, articleId }) => {
       <div className="p-6 flex flex-col flex-grow">
         <h2 className="text-xl font-bold mb-2">{article.title}</h2>
         <p className="text-sm text-gray-400 mb-2">
-          <strong>Published on:</strong> {article.publishedDate}
+          <strong>Published on:</strong> {article.date}
         </p>
         <div className="text-gray-300 mb-4 flex-grow">
-          <Interweave content={article.excerpt} />
+          <Interweave content={shorterExcerpt(article.excerpt, 20)} />
         </div>
         <div className="mt-auto">
           <Link
