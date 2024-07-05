@@ -4,12 +4,12 @@ import { Article } from '../Components/types';
 
 const Homepage = ({ articles }: { articles: Article[] }) => {
   return (
-    <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div className="shadow mb-7 mt-10 rounded-lg">
-        <h1 className="text-3xl text-white font-bold">TOP PICKS</h1>
-      </div>
+    <main className="p-4 m-4 mx-auto max-w-7xl bg-gray-900 bg-opacity-60 text-white rounded-lg mt-14" >
+      <header className="py-4">
+        <h1 className="text-4xl font-bold">TOP PICKS</h1>
+      </header>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <CustomCard articleId={22} articles={articles} />
+        <CustomCard articleId={64} articles={articles} />
         <CustomCard articleId={24} articles={articles} />
         <CustomCard articleId={41} articles={articles} />
         <CustomCard articleId={27} articles={articles} />
@@ -43,7 +43,7 @@ const Homepage = ({ articles }: { articles: Article[] }) => {
         </div>
       </section>
 
-      <section className="bg-gray-900 bg-opacity-60 rounded-lg text-white text-center p-4 py-10">
+      <section className="text-white text-center p-4 py-10">
     <h2 className="text-2xl font-bold mb-4">GET IN TOUCH!</h2>
     <p>We'd love to hear from you! Whether you have questions, suggestions, or just want to say hi, feel free to reach out. Join our community, contribute your ideas, and help us make Codeitos even better. Connect with us at <a href="mailto:Micheal@mfelobes.ca" className="text-Orange">Micheal@mfelobes.ca</a>. Let's build something amazing together!</p>
 </section>

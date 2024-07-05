@@ -66,7 +66,172 @@ article li {
 }
 
 article li strong {
+  color: #ec643b;
+}
+
+/* Comments for all markdown */
+.details {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  color: #e0e0e0;
+}
+
+.details h1, .details h2, .details h3, .details h4, .details h5, .details h6 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
   color: #FF3D00;
 }
 
+.details h1 {
+  font-size: 2.2em;
+}
 
+.details h2 {
+  font-size: 1.8em;
+}
+
+.details h3 {
+  font-size: 1.55em;
+}
+
+.details h4 {
+  font-size: 1.3em;
+}
+
+.details h5 {
+  font-size: 1.05em;
+}
+
+.details h6 {
+  font-size: 0.925em;
+}
+
+.details p {
+  margin: 10px 0;
+}
+
+.details em {
+  font-style: italic;
+}
+
+.details strong {
+  font-weight: bold;
+}
+
+.details del {
+  text-decoration: line-through;
+}
+
+.details ul, .details ol {
+  margin: 10px 0 10px 20px;
+  padding: 0;
+}
+
+.details ul ul, .details ol ol, .details ul ol, .details ol ul {
+  margin: 0 0 0 20px;
+}
+
+.details li {
+  margin: 5px 0;
+}
+
+.details ul {
+  list-style-type: square;
+}
+
+.details ol {
+  list-style-type: decimal;
+}
+
+.details a {
+  color: #ec643b;
+  text-decoration: none;
+}
+
+.details a:hover {
+  text-decoration: underline;
+}
+
+.details img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px 0;
+  border: 1px solid #444;
+}
+
+.details blockquote {
+  margin: 10px 0;
+  padding: 10px 20px;
+  border-left: 5px solid #444;
+  background: #333;
+  color: #ccc;
+}
+
+.details code {
+  font-family: monospace;
+  background: #2d2d2d;
+  color: #f8f8f2;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.details pre {
+  background: #2d2d2d;
+  color: #f8f8f2;
+  padding: 10px;
+  border-radius: 4px;
+  overflow: auto;
+}
+
+.details table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: #2d2d2d;
+}
+
+.details th, .details td {
+  border: 1px solid #444;
+  padding: 8px;
+  text-align: left;
+  color: #f8f8f2;
+}
+
+.details th {
+  background: #3c3c3c;
+}
+
+.details hr {
+  border: none;
+  border-top: 1px solid #444;
+  margin: 20px 0;
+}
+
+.details .footnotes {
+  margin-top: 20px;
+  font-size: 0.875em;
+  color: #ccc;
+}
+
+.details .footnotes ol {
+  padding-left: 20px;
+}
+
+.details .footnotes li {
+  margin-bottom: 10px;
+}
+
+.details .footnote-backref {
+  text-decoration: none;
+  font-size: 0.875em;
+}
+
+
+.details :focus {
+  outline: none;
+}

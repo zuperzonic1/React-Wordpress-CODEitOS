@@ -32,15 +32,15 @@ const CategoryPage = ({ articles }: { articles: Article[] }) => {
   );
 
   return (
-    <main className="p-4 mx-auto max-w-7xl">
-      <div className="shadow mb-4 py-4 rounded-lg">
-        <h1 className="text-3xl text-white font-bold">{uppercaseCategory}</h1>
+    <main className="p-4 m-4 mx-auto max-w-7xl bg-gray-900 bg-opacity-60 text-white rounded-lg mt-14">
+      <header className="py-4">
+        <h1 className="text-4xl font-bold">{uppercaseCategory}</h1>
+      </header>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
           {filteredArticles.map(article => (
             <CustomCard key={article.id} articles={articles} articleId={article.id} />
           ))}
         </div>
-      </div>
     </main>
   );
 };

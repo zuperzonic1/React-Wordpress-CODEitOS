@@ -1,4 +1,7 @@
+import { useRef } from "react";
 import { Link } from "react-router-dom";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import SearchForm from "./SearchForm";
 import Dropdown from "./Dropdown";
 import { Article } from "../types";
@@ -14,11 +17,21 @@ const MobileMenu = ({
   toggleMobileMenu,
   articles,
 }: MobileMenuProps) => {
+  const menuRef = useRef(null);
+
+  useGSAP(() => {
+    if (isMobileMenuOpen) {
+      gsap.to(menuRef.current, { x: 0, duration: 0.5 });
+    } else {
+      gsap.to(menuRef.current, { x: "-100%", duration: 0.5 });
+    }
+  }, [isMobileMenuOpen]);
+
   return (
     <div
-      className={`fixed top-0 left-0 w-65 h-full bg-black text-white z-30 transition-transform transform ${
-        isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-      } md:hidden`}
+      ref={menuRef}
+      className={`fixed top-0 left-0 w-65 h-full bg-black text-white z-30 transition-transform transform md:hidden`}
+      style={{ transform: isMobileMenuOpen ? "translateX(0)" : "translateX(-100%)" }}
     >
       <div className="p-4">
         <button className="text-white mb-4" onClick={toggleMobileMenu}>
