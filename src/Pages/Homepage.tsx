@@ -9,7 +9,7 @@ const Homepage = ({ articles }: { articles: Article[] }) => {
         <h1 className="text-4xl font-bold">TOP PICKS</h1>
       </header>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <CustomCard articleId={52} articles={articles} />
+        <CustomCard articleId={67} articles={articles} />
         <CustomCard articleId={77} articles={articles} />
         <CustomCard articleId={64} articles={articles} />
         <CustomCard articleId={27} articles={articles} />
