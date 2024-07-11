@@ -235,3 +235,12 @@ article li strong {
 .details :focus {
   outline: none;
 }
+
+/*adding autoplay attribute to html vids*/
+.video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center; 
+}
