@@ -1,1 +1,0 @@
-import{j as s}from"./index-DSmySHd4.js";import{C as o}from"./CustomCard-CUIlOV_K.js";const t=({articles:d})=>s.jsx("div",{className:"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4",children:d.map(r=>s.jsx(o,{articleId:r.id,articles:d},r.id))});export{t as R};
