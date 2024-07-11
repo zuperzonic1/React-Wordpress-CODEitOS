@@ -2,18 +2,18 @@ import { useParams } from 'react-router-dom';
 import { Interweave } from 'interweave';
 import HighlightCode from '../Components/HighlightCode';
 import { Article } from '../Components/types';
+import { useEffect } from 'react';
 
 const ArticleDetails = ({ articles }: { articles: Article[] }) => {
   const { articleId } = useParams<{ articleId: string }>();
   const article = articles.find((a) => `${a.id}` === articleId);
 
-  // adding attributes autoplay and loop to .autoplay class
-  const autoplay = document.querySelectorAll('video.autoplay  ');
-  autoplay.forEach((video) => {
-    video.setAttribute('autoplay', '');
-    video.setAttribute('loop', '');
-  });
-  
+  useEffect(() => {
+    const autoplay = document.querySelectorAll('video.autoplay');
+    autoplay.forEach((video) => {
+      video.setAttribute('autoplay', '');
+    });
+  }, []);
 
   // console.log (article.author);
 
