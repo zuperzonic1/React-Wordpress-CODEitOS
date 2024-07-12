@@ -1,4 +1,4 @@
-import RecentlyAdded from '../Components/RecientlyAdded'; // Adjust the path as needed
+import RecentlyAdded from '../Components/RecientlyAdded'; 
 import { Article } from '../Components/types';
 
 const ArticleCards = ({ articles }: { articles: Article[] }) => {

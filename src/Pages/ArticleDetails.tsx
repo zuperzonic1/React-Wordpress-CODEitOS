@@ -15,8 +15,6 @@ const ArticleDetails = ({ articles }: { articles: Article[] }) => {
     });
   }, []);
 
-  // console.log (article.author);
-
   if (!article) {
     return <div>Article not found</div>;
   }
