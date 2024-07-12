@@ -237,10 +237,11 @@ article li strong {
 }
 
 /*adding autoplay attribute to html vids*/
-.video {
+video {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center; 
+  -webkit-overflow-scrolling: touch;
 }
