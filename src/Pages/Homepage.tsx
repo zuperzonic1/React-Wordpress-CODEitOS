@@ -10,9 +10,9 @@ const Homepage = ({ articles }: { articles: Article[] }) => {
       </header>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <CustomCard articleId={52} articles={articles} />
-        <CustomCard articleId={77} articles={articles} />
-        <CustomCard articleId={64} articles={articles} />
         <CustomCard articleId={108} articles={articles} />
+        <CustomCard articleId={64} articles={articles} />
+        <CustomCard articleId={77} articles={articles} />
       </div>
       <div className="shadow mb-7 mt-10 rounded-lg">
         <h1 className="text-3xl text-white font-bold">RECENTLY ADDED</h1>
