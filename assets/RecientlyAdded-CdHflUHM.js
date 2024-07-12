@@ -1,0 +1,1 @@
+import{j as s}from"./index-Dy_ofFPa.js";import{C as o}from"./CustomCard-D4XaGawr.js";const t=({articles:d})=>s.jsx("div",{className:"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4",children:d.map(r=>s.jsx(o,{articleId:r.id,articles:d},r.id))});export{t as R};
