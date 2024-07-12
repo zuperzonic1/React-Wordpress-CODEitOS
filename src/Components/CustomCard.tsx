@@ -43,6 +43,13 @@ const CustomCard: React.FC<CustomCardProps> = ({ articles, articleId }) => {
   }
   const readTime = calculateReadTime(article.content);
 
+  const handleReadMoreClick = () => {
+    const articleImageElement = document.getElementById('article-image');
+    if (articleImageElement) {
+      articleImageElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   return (
     <div className="bg-black bg-opacity-40 text-white border border-orange-600 rounded-lg overflow-hidden shadow-lg flex flex-col h-full">
       {article.imageUrl && (
@@ -68,6 +75,7 @@ const CustomCard: React.FC<CustomCardProps> = ({ articles, articleId }) => {
           <Link
             to={`/articles/${article.id}`}
             className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
+            onClick={handleReadMoreClick}
           >
             Read More
           </Link>

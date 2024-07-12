@@ -15,23 +15,30 @@ const ArticleDetails = ({ articles }: { articles: Article[] }) => {
     });
   }, []);
 
+  useEffect(() => {
+    const imageElement = document.getElementById('article-image');
+    if (imageElement) {
+      imageElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, []);
+
   if (!article) {
     return <div>Article not found</div>;
   }
 
   return (
     <main className="p-4 m-4 mx-auto max-w-7xl bg-gray-900 bg-opacity-60 text-white rounded-lg mt-14">
-     
       {article.imageUrl && (
         <div className="my-4">
           <img
             src={article.imageUrl}
             alt={article.title}
             className="w-full h-auto rounded"
+            id="article-image"
           />
         </div>
       )}
-       <header className="py-4">
+      <header className="py-4">
         <h1 className="text-4xl font-bold">{article.title}</h1>
       </header>
       <article className="prose prose-invert max-w-none">
