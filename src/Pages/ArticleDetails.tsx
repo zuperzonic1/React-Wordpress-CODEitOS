@@ -12,6 +12,7 @@ const ArticleDetails = ({ articles }: { articles: Article[] }) => {
     const autoplay = document.querySelectorAll('video.autoplay');
     autoplay.forEach((video) => {
       video.setAttribute('autoplay', '');
+      video.setAttribute('playsinline', '');
     });
   }, []);
 
