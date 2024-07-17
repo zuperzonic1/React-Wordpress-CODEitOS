@@ -192,23 +192,26 @@ article li strong {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
-  background: #2d2d2d;
+  background: rgba(45, 45, 45, .2);
 }
 
-.details th, .details td {
-  border: 1px solid #444;
+.details td {
+  border: 1px solid rgb(68, 68, 68);
   padding: 8px;
   text-align: left;
   color: #f8f8f2;
 }
 
 .details th {
-  background: #3c3c3c;
+  background: rgba(60, 60, 60,.5) ;
+  padding: 8px;
+  text-align: left;
+  color: #ec643b;
 }
 
 .details hr {
   border: none;
-  border-top: 1px solid #444;
+  border-top: 1px solid rgba(68, 68, 68,1);
   margin: 20px 0;
 }
 

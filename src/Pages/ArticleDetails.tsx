@@ -28,7 +28,7 @@ const ArticleDetails = ({ articles }: { articles: Article[] }) => {
   }
 
   return (
-    <main className="p-4 m-4 mx-auto max-w-7xl bg-gray-900 bg-opacity-60 text-white rounded-lg mt-14">
+    <main className="p-4 m-4 mx-auto max-w-7xl bg-gray-900 bg-opacity-50 text-white rounded-lg mt-14">
       {article.imageUrl && (
         <div className="my-4">
           <img
