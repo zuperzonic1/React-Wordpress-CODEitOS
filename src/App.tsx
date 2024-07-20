@@ -46,7 +46,6 @@ const App: React.FC = () => {
   const [isDataLoaded, setIsDataLoaded] = useState(false);
 
   useEffect(() => {
-     console.log("Fetching articles");
     axios
       .get("https://blogbackend.mfelobes.ca/wp-json/wp/v2/articles?_embed")
       .then((res) => {
@@ -70,10 +69,8 @@ const App: React.FC = () => {
         setIsDataLoaded(true);
       })
       .catch((err) => console.log(err));
-      console.log("Articles fetched");
   }, []);
 
-  console.log(articles);
 
   const LoadingIndicator = (
     <div className="flex justify-center items-center h-screen">
