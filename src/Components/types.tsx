@@ -14,4 +14,5 @@ export interface Article {
     tags: string;
     content: string;
     articleUrl: string;
+    code: string;
   }
