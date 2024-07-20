@@ -37,7 +37,7 @@ interface APIArticle {
   date: string;
   modified: string;
   excerpt: { rendered: string };
-  acf: { article_url: string; published_date: string; publisher: string };
+  acf: { article_url: string; published_date: string; publisher: string; code?: string };
   content: { rendered: string };
 }
 
