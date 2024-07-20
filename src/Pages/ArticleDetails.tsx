@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
-import { Interweave } from 'interweave';
 import HighlightCode from '../Components/HighlightCode';
 import { Article } from '../Components/types';
+import {Interweave} from 'interweave';
 import { useEffect } from 'react';
 
 const ArticleDetails = ({ articles }: { articles: Article[] }) => {
@@ -22,6 +22,19 @@ const ArticleDetails = ({ articles }: { articles: Article[] }) => {
       imageElement.scrollIntoView({ behavior: 'smooth' });
     }
   }, []);
+
+  useEffect(() => {
+    if (article && article.code) {
+      const script = document.createElement('script');
+      script.textContent = article.code;
+      script.defer = true;
+      document.body.appendChild(script);
+      
+      return () => {
+        document.body.removeChild(script);
+      };
+    }
+  }, [article]);
 
   if (!article) {
     return <div>Article not found</div>;
@@ -75,7 +88,7 @@ const ArticleDetails = ({ articles }: { articles: Article[] }) => {
             </p>
           )}
         </div>
-        <Interweave className='details' content={article.content} />
+        <Interweave className='details' content={article.content} />        
         <HighlightCode />
       </article>
     </main>

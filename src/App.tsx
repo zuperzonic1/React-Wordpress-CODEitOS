@@ -46,9 +46,11 @@ const App: React.FC = () => {
   const [isDataLoaded, setIsDataLoaded] = useState(false);
 
   useEffect(() => {
+     console.log("Fetching articles");
     axios
       .get("https://blogbackend.mfelobes.ca/wp-json/wp/v2/articles?_embed")
       .then((res) => {
+
         const simplifiedArticles: Article[] = res.data.map((article: APIArticle) => ({
           id: article.id,
           imageUrl: article._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "",
@@ -57,18 +59,21 @@ const App: React.FC = () => {
           modified: new Date(article.modified).toLocaleDateString(),
           excerpt: article.excerpt.rendered,
           author: article._embedded?.author?.[0]?.name || "Unknown",
-          articleUrl: article.acf.article_url,
           publishedDate: article.acf.published_date,
           publisher: article.acf.publisher,
           categories: article._embedded["wp:term"]?.[0]?.map((cat) => cat.name).join(", ") || "",
           tags: article._embedded["wp:term"]?.[1]?.map((tag) => tag.name).join(", ") || "",
           content: article.content.rendered,
+          code: article.acf.code,
         }));
         setArticles(simplifiedArticles);
         setIsDataLoaded(true);
       })
       .catch((err) => console.log(err));
+      console.log("Articles fetched");
   }, []);
+
+  console.log(articles);
 
   const LoadingIndicator = (
     <div className="flex justify-center items-center h-screen">
