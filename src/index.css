@@ -204,6 +204,7 @@ article li strong {
 
 .details th {
   background: rgba(60, 60, 60,.5) ;
+  border: 1px solid rgb(68, 68, 68);
   padding: 3px;
   text-align: left;
   color: #ec643b;

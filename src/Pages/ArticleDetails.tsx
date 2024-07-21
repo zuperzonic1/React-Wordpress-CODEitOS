@@ -96,3 +96,5 @@ const ArticleDetails = ({ articles }: { articles: Article[] }) => {
 };
 
 export default ArticleDetails;
+
+
